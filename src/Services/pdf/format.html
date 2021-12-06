@@ -1,0 +1,134 @@
+<style>
+    table.detail td{
+        font-size:10;
+    }
+    table.head td{
+        font-size:10;
+    }
+    table.head tr{
+        margin:0;
+    }
+	table{
+		width:100%;
+		line-height:inherit;
+	}
+	table.tblfooter tr td:nth-child(2){
+        text-align:right;
+        padding-right:10px;
+    }
+	.invoice-box table.detail td{
+		padding:2px;
+		vertical-align:top;
+	}
+	.invoice-box table.head td{
+		padding:1;
+		vertical-align:top;
+	}
+	.invoice-box table.head tr td:nth-child(2){
+		text-align:right;
+	}
+	
+	.invoice-box table tr.heading td{
+		background:#eee;
+		border-bottom:1px solid #ddd;
+		font-weight:bold;
+	}
+	.invoice-box table tr.details td{
+		padding-bottom:none;
+	}
+	.invoice-box table tr.item td{
+		border-bottom:1px solid #aaa;
+	}
+	.invoice-box table.detail tr.item td:nth-child(9){
+		
+	}
+    .invoice-box table.detail tr.item td:nth-child(7){
+        text-align:center;
+    }
+    \.invoice-box table.detail tr.item td:nth-child(3){
+        text-align:left;
+    }
+	.invoice-box table tr.item.last td{
+		border-bottom:none;
+	}
+	
+	
+    </style>
+  <div class="invoice-box">
+		<table class="head" cellpadding="0" cellspacing="0">
+			<tr class="top">
+				<td colspan="2">
+					<table>
+                        <tr>
+                            <td ><b>Nit:</b>    '.number_format($Encabezado['strIdCliente']).'    </td>
+                            <td >Pedido: <b>'.$intPedido.' '.$Tipo.'</b></td>
+                        </tr>
+                        <tr>
+                            <td ><b>Cliente:</b>    '.($Encabezado['strNombCliente']).'</td>
+                        </tr>
+                        <tr>
+                            <td ><b>Ciudad:</b>     '.($Encabezado['strCiudadCliente']).'</td>
+                            <td >F<b>echa Pedido:</b> '.($Encabezado['dtFechaFinalizacion']).'</td>
+                        </tr>
+                        <tr>
+                            <td ><b>Separador:</b>  '.($Encabezado['strNombVendAsignado']).' ('.($Encabezado['dtFechaInicio']).')</td>
+                            <td ><b>Vendedor:</b>   '.($Encabezado['strNombVendedor']).'</td>
+                        </tr>
+                        <tr>
+                            <td ><b>Correo Facturacion:</b>     '.($Encabezado['strCorreoClienteAct']).'</td>
+                            <td ><b>Telefono:</b> '.($Encabezado['strTelefonoClienteAct']).'</td>
+                        </tr>
+                        <tr>
+                            <td ><b>Celular:</b>  '.($Encabezado['strCelularClienteAct']).'</td>
+                            <td ><b>Ciudad:</b>  '.($Encabezado['strCiudadClienteAct']).'</td>
+                        </tr>
+                        <tr>
+                            <td ><b>Info Empaque:</b>   '.array_search('941',array_column($Ubicacion,'StrIdProducto')).'</td>
+                            <td ><b>Dependencia:</b>  '.($Encabezado['strNombreDependencia']).'</td>
+                        </tr>
+					</table>
+				</td>
+			</tr>
+			
+        </table>
+			<hr>
+		<table class="detail" cellpadding="0" cellspacing="0">	
+			
+			<tr class="heading">
+                <td>#</td>
+                <td>Referencia</td>
+                <td>Descripcion</td>
+                <td>Guion</td>
+                <td>Observacion</td>
+                <td>Ubicacion</td>
+                <td>Cantidad</td>
+                <td>Unidad</td>
+                <td>Precio</td>
+			</tr>
+          <tr class="item">
+                    <td>'.$i.'</td>
+                    <td>'.$item['strIdProducto'].'</td>
+                    <td>'.$item['strDescripcion'].'</td>
+                    <td>'.$item['strColor'].'</td>
+                    <td>'.$item['strObservacion'].'</td>
+                    <td>'.$Ubicacion[array_search($item['strIdProducto'] ,array_column($Ubicacion,'StrIdProducto'))]->strUbicacion.'</td>
+                    <td>'.$item['intCantidad'].'</td>
+                    <td>'.$item['strUnidadMedida'].'</td>
+                    <td>'.$precio.'</td>
+                </tr>
+            
+</table>
+    <table class="tblfooter">
+        <tr>
+            <td><h4>***'.($Encabezado['strObservacion']).'***</h2></td>
+            <td><b>Total</b>    $ '.number_format($Encabezado['intValorTotal']).'</td>
+            
+		</tr>
+    </table>
+	</div>
+    <table width="100%">
+        <tr style="font-size:10;">
+            <td width="33%">{DATE j-m-Y}</td>
+            <td width="33%" style="text-align: right;">{PAGENO}/{nbpg}</td>
+        </tr>
+    </table>
