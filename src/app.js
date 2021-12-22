@@ -3,7 +3,7 @@ const app=express();
 const cors= require('cors');
 
 //Settings
-app.set('port',process.env.PORT || 4000);
+app.set('port',process.env.PORT || 5000);
 
 //Middlewares
 app.use(express.json({limit:'200mb'}));
