@@ -2,7 +2,7 @@ const databaseSQL = require('../Databases/databaseSQL.js');
 const sqlCon = require('../Databases/DbHgi.js');
 const objFiltros = {};
 
-
+//Obtiene los materiales de los productos según la linea, grupo y tipo
 objFiltros.GetMateriales = async (req, res)=>{
     const {id_clase, lineas_ids, grupos_ids, tipos_ids } = req.query;
     const sql = `select TblProdParametro2.StrIdPParametro, TblProdParametro2.StrDescripcion from tblproductos 
@@ -75,12 +75,11 @@ objFiltros.GetMarcas = async (req, res)=>{
             strData: rpta.recordset
         });
     } catch (error) {
-        console.log("error marcas --------- ")
+        console.log("Error marcas --------- ")
         console.log(error)
     } finally {
         SQLConexionHGI.close();
-    }
-    
+    }  
 }
 
 module.exports = objFiltros;

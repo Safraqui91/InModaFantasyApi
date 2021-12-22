@@ -164,7 +164,7 @@ objProductos.GetTipos = async (req, res) => {
 //Obtener producto especifico
 objProductos.GetProductoEspecifico = async (req, res) => {
   try {
-    /*//Conexion SQLserver
+    //Conexion SQLserver
 		const SQLConexionHGI = await databaseSQL.ConexionSQL_HGI();
 		let result = await SQLConexionHGI.query(`select 
 							tblproductos.StrIdProducto,TblProductos.StrDescripcion,convert(int,TblProductos.IntPrecio1) as 'IntPrecio1',
@@ -175,12 +175,12 @@ objProductos.GetProductoEspecifico = async (req, res) => {
 			strProducto: result.recordsets[0]
 		});
 		//Cerrar conexion SQL
-		await SQLConexionHGI.close();*/
-    let result = await objSqlProductos.GetProductoEspecifico(
+		await SQLConexionHGI.close();
+    /*let result = await objSqlProductos.GetProductoEspecifico(
       req.params.id_linea,
       req.params.id_clase,
       req.params.id_grupo
-    );
+    );*/
     res.json({
       strDataCategoria: result,
     });

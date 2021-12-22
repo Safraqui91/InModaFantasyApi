@@ -247,13 +247,13 @@ objSqlProductos.GetProductosRelacionados = async (req) => {
     await SQLConexionHGI.close();
     return rpta['recordset'];
 }
-
+//Obtiene las líneas de los productos según la clase, para generar los filtros
 objSqlProductos.GetLineasPorClaseProducto = async (idClase) => {
     const SQLConexionHGI = new sqlCon();
     try {
         let result = await SQLConexionHGI.execute(`select distinct TblProductos.StrLinea as 'StrIdCategoria',TblLineas.StrDescripcion, 'Lineas' as 'StrTipoCategoria'
 											from tblproductos inner join TblLineas on TblProductos.StrLinea=TblLineas.StrIdLinea  
-											where tblproductos.StrClase='${idClase}' ;`);
+											where tblproductos.StrClase='${idClase}';`);
         return result.recordset;
     } catch (error) {
         console.log("error hptaaaaaa")

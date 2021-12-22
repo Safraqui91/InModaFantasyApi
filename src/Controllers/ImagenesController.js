@@ -74,7 +74,7 @@ objImagenes.GetImagen=async(req,res)=>{
             let uri = await model.GetImagenesReferencia(strIdProducto);
             if(uri !== []){
                 let src = uri[0].StrArchivo;
-                src = src.replace("FARMA PET", "MASCOTAS");
+                //src = src.replace("FARMA PET", "MASCOTAS");
                 fs.access(path.join(path_owncloud,src), fs.constants.F_OK, (err) => {
                     if(err){
                         res.sendFile('NoDisponible.jpg',{ root: path.join(__dirname,'../Public/') });

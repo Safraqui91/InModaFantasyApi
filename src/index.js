@@ -4,10 +4,10 @@ const https = require('https');
 const fs = require('fs');
 
 async function Main(){
-  if(process.env.NODE_ENV == "development"){
+  /*if(process.env.NODE_ENV == "development"){*/
     await app.listen(app.get('port'));
     console.log('server puerto 4000');
-  }else{
+  }/*else{
     const options = {
       key: fs.readFileSync('/etc/letsencrypt/live/inmodafantasy.com.co/privkey.pem'),
       cert: fs.readFileSync('/etc/letsencrypt/live/inmodafantasy.com.co/cert.pem')
@@ -16,5 +16,7 @@ async function Main(){
       console.log("server puerto 4000")
     });
   }
-}
+  https.createServer(options, app).listen(4000, ()=>{
+  console.log("server puerto 4000")
+}*/
 Main();

@@ -32,7 +32,7 @@ module.exports = class Sql {
             }).then(result => {
                 resolve(result);
             }).catch(err => {
-                console.log("promesaaaaa")
+                console.log("--Promesa--")
                 console.log(err);
                 reject(err);
             }).finally(()=>{
