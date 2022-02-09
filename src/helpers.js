@@ -9,13 +9,13 @@ objHelpers.EnviarEmailPedidoFinalizado = async(email, nombreTercero, nombreDepen
         secure: false,
         requireTLS: true,
         auth: {
-            user: 'deiby.andrez13@gmail.com',
-            pass: 'drhtxmbqdthquvze'
+            user: 'inmodadev3@gmail.com',
+            pass: 'inmodasistemas123'
         }
     });
     var mailOptions = {
-      from: 'deiby.andrez13@gmail.com',
-      to: ['deiby.andrez@gmail.com','inmodadev@gmail.com', email],
+      from: 'inmodadev3@gmail.com',
+      to: ['inmodadev@gmail.com', email],
       subject: 'Pedido IM Finalizado '+nombreTercero,
       html:`<!doctype html>
       <html>
@@ -69,13 +69,13 @@ objHelpers.EnviarEmailRegistroTercero = async(jsonData, files)=>{
         secure: false,
         requireTLS: true,
         auth: {
-            user: 'deiby.andrez13@gmail.com',
-            pass: 'drhtxmbqdthquvze'
+            user: 'inmodadev3@gmail.com',
+            pass: 'inmodasistemas123'
         }
     });
     var mailOptions = {
-      from: 'deiby.andrez13@gmail.com',
-      to: ['deiby.andrez@gmail.com','inmodadev3@gmail.com'],
+      from: 'inmodadev3@gmail.com',
+      to: ['inmodadev3@gmail.com'],
       subject: 'Registro IM Tercero',
       html:`<!doctype html>
       <html>
@@ -121,12 +121,12 @@ objHelpers.EnviarEmailToken = async(email, token)=>{
       secure: false,
       requireTLS: true,
       auth: {
-          user: 'deiby.andrez13@gmail.com',
-          pass: 'drhtxmbqdthquvze'
+          user: 'inmodadev3@gmail.com',
+          pass: 'inmodasistemas123'
       }
   });
   var mailOptions = {
-    from: 'deiby.andrez13@gmail.com',
+    from: 'inmodadev3@gmail.com',
     to: [email],
     subject: 'Solicitud cambio contraseña - IN MODA FANTASY',
     html:`
@@ -173,13 +173,13 @@ objHelpers.EnviarEmailAlertaPrecioTercero = async(jsonData)=>{
       secure: false,
       requireTLS: true,
       auth: {
-          user: 'deiby.andrez13@gmail.com',
-          pass: 'drhtxmbqdthquvze'
+          user: 'inmodadev3@gmail.com',
+          pass: 'inmodasistemas123'
       }
   });
   var mailOptions = {
-    from: 'deiby.andrez13@gmail.com',
-    to: ['deiby.andrez@gmail.com', JsonVendedor.strEmail == null?'ventas1inmoda@gmail.com':JsonVendedor.strEmail],
+    from: 'inmodadev3@gmail.com',
+    to: ['inmodadev3@gmail.com', JsonVendedor.strEmail == null?'ventas1inmoda@gmail.com':JsonVendedor.strEmail],
     subject: 'Validación IM Tercero',
     html:`<!doctype html>
     <html>
@@ -215,13 +215,13 @@ objHelpers.EnviarEmailContactanos = async(jsonData)=>{
       secure: false,
       requireTLS: true,
       auth: {
-          user: 'deiby.andrez13@gmail.com',
-          pass: 'drhtxmbqdthquvze'
+          user: 'inmodadev3@gmail.com',
+          pass: 'inmodasistemas123'
       }
   });
   var mailOptions = {
-    from: 'deiby.andrez13@gmail.com',
-    to: ['deiby.andrez@gmail.com', 'ventas1inmoda@gmail.com'],
+    from: 'inmodadev3@gmail.com',
+    to: ['inmodadev3@gmail.com', 'ventas1inmoda@gmail.com'],
     subject: 'Comentario Página',
     html:`<!doctype html>
     <html>
